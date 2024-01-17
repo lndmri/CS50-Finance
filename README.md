@@ -5,23 +5,23 @@ This project is a Web Application that implements a Stock Portfolio and allows u
 ![image](https://github.com/lndmri/CS50-Finance/assets/69853165/68641e23-d796-4d5b-b133-5c29b2b188a5)
 
 # Technologies
-Python
-Flask with session authentication
-SQL
-HTML
-Bootstrap
+* Python
+* Flask with session authentication
+* SQL
+* HTML
+* Bootstrap
 
 # Summary
 Finance is a web app that allows logged-in users to "buy" and "sell" stocks (with pretend money) as well as look up real stock quotes fetched from Yahoo API. Users can also view their stock portfolio transaction history. Users have the possibility to change their password.
 
 # How to Run
 Clone this repository, navigate to the project and type the following commands:
-Activate a virtual environment: 'python3 -m venv .venv' then select the virtual environment as the active workspace
-Install dependencies: 'pip install -r requirements.txt'
-Run command 'export FLASK_APP=application.py' to set the Flask environment variable
-Configure and export your API key with these instructions
-Run command 'flask run' to open on localhost
-When the finance site opens in your browser, register for a new account (upper right corner) to create your own stock portfolio
+* Activate a virtual environment: 'python3 -m venv .venv' then select the virtual environment as the active workspace
+* Install dependencies: 'pip install -r requirements.txt'
+* Run command 'export FLASK_APP=application.py' to set the Flask environment variable
+* Configure and export your API key with these instructions
+* Run command 'flask run' to open on localhost
+* When the finance site opens in your browser, register for a new account (upper right corner) to create your own stock portfolio
 
 # Routes
 Register
