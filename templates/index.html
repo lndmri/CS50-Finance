@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h1>{{ username }}'s Stock Portfolio</h1>
+<table class="table table-hover"">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for row in rows %}
+        <tr>
+            <td >{{ row.stock_symbol }}</td>
+            <td>{{ row.quantity }}</td>
+            <td>{{ row.current_price | usd}}</td>
+            <td>{{ (row.current_price * row.quantity) | usd }}</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+    <tfooter>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><b>Cash</b></td>
+            <td><b>{{ cash | usd}}</b></td>
+        </tr>
+        <td></td>
+        <td></td>
+        <td><b>Grand Total</b></td>
+        <td><b>{{ (cash + stock_total) | usd }}</b></td>
+    </tfooter>
+</table>
+{% endblock %}
+

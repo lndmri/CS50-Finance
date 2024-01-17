@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<h1> Transaction History</h1>
+<table class="table table-hover"">
+  <thead>
+    <tr>
+      <th scope="col">Transaction</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Price (at transaction time)</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Transaction Total</th>
+      <th scope="col">Balance Before</th>
+      <th scope="col">Balance After</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for row in rows %}
+        <tr>
+            <td >{{ row.transaction_type }}</td>
+            <td>{{ row.stock_symbol }}</td>
+            <td>{{ row.stock_price | usd}}</td>
+            <td>{{ row.shares }}</td>
+            {% if row.transaction_type == "purchase" %}
+                <td style="color: red;">-{{ row.total | usd}}</td>
+            {% elif row.transaction_type == "sell" %}
+                <td style="color: green;">+{{ row.total | usd}}</td>
+            {% endif %}
+            <td>{{ row.balance_before | usd}}</td>
+            <td>{{ row.balance_after | usd}}</td>
+            <td>{{ row.timestamp_column }}</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
